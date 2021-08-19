@@ -1,0 +1,34 @@
+{
+    "name": "death_satan/thinkphp-sms",
+    "description": "thinkphp6 sms",
+    "type": "library",
+    "homepage": "https://www.cnblogs.com/death-satan",
+    "license": "MIT",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "death-satan",
+            "email": "2771717608@qq.com"
+        }
+    ],
+    "require": {
+        "topthink/framework": "^6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SaTan\\Think\\Sms\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "keywords": ["thinkphp6","thinkphp composer组件扩展包","thinkphp6 sms","thinkphp 短信","sms"],
+    "extra": {
+        "think": {
+            "services": [
+                "\\SaTan\\Think\\Sms\\ThinkService"
+            ],
+            "config":{
+                "sms": "src/config.php"
+            }
+        }
+    }
+}
