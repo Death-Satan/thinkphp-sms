@@ -20,5 +20,8 @@ class ThinkService extends \think\Service
         $this->app->bind('sms',function (App $app){
             return new Sms($app);
         });
+        $this->commands([
+            \SaTan\Think\Sms\commands\Sms::class
+        ]);
     }
 }

@@ -7,7 +7,7 @@
  * @company   : Death撒旦
  * @link      https://www.cnblogs.com/death-satan
  */
-namespace Satan\Think\Sms{
+namespace SaTan\Think\Sms{
     class SmsClient
     {
         /**
@@ -111,6 +111,7 @@ namespace Satan\Think\Sms{
          * @param string       $template_code 模板id
          * @param array $TemplateParam 模板变量
          * @param array        $extras  额外变量
+         * @return Object
          */
         public function sendSms(int $phone,string $sign_name,string $template_code,array $TemplateParam,array $extras=[]){}
         /**
@@ -120,6 +121,7 @@ namespace Satan\Think\Sms{
          * @param string $template_code 模板id
          * @param array  $TemplateParam 模板变量
          * @param array  $extras 额外变量
+         * @return Object
          */
         public function sendBatchSms(array $phones,string $sign_name,string $template_code,array $TemplateParam,array $extras=[]){}
         /**
@@ -128,14 +130,14 @@ namespace Satan\Think\Sms{
          * @param string $sign_source 签名来源
          * @param string $remark 申请备注
          * @param array  $extras
-         * @return mixed
+         * @return Object
          */
         public function addSmsSign(string $sign_name,string $sign_source,string $remark,array $extras=[]){}
         /**
          * 删除签名
          * @param string $sign_name 签名
          *
-         * @return mixed
+         * @return Object
          */
         public function deleteSmsSign(string $sign_name){}
         /**
@@ -145,7 +147,7 @@ namespace Satan\Think\Sms{
          * @param string $remark 备注
          * @param array  $extras 额外变量
          *
-         * @return mixed
+         * @return Object
          */
         public function modifySmsSign(string $sign_name,string $sign_source,string $remark,array $extras=[]){}
         /**
@@ -153,7 +155,7 @@ namespace Satan\Think\Sms{
          * @param string $sign_name 签名
          * @param array  $extras 额外参数
          *
-         * @return mixed
+         * @return Object
          */
         public function querySmsSign(string $sign_name='',array $extras=[]){}
         /**
@@ -164,7 +166,7 @@ namespace Satan\Think\Sms{
          * @param string $remark 备注|申请原因
          * @param array  $extras 额外参数
          *
-         * @return mixed
+         * @return Object
          */
         public function addSmsTemplate(string $template_name,int $template_type,string $template_content,string $remark,array $extras=[]){}
         /**
@@ -172,7 +174,7 @@ namespace Satan\Think\Sms{
          * @param string $template_code 模板code
          * @param array  $extras 额外参数
          *
-         * @return mixed
+         * @return Object
          */
         public function deleteSmsTemplate(string $template_code,array $extras=[]){}
         /**
@@ -184,7 +186,7 @@ namespace Satan\Think\Sms{
          * @param string $remark 备注|申请原因
          * @param array  $extras 额外参数
          *
-         * @return mixed
+         * @return Object
          */
         public function modifySmsTemplate(string $template_code,int $template_type,string $template_name,string $template_content,string $remark,array $extras=[]){}
         /**
@@ -192,9 +194,47 @@ namespace Satan\Think\Sms{
          * @param string $template 模板id|模板code
          * @param array  $extras 额外参数
          *
-         * @return mixed
+         * @return Object
          */
         public function querySmsTemplate(string $template,array $extras=[]){}
+    }
+    class SmsAction{
+        /**
+         * 发送短信
+         * @param $phone
+         *
+         * @return Object|void
+         */
+        public static function send($phone)
+        {
+        }
+
+        /**
+         * 设置模板变量
+         * @param array $template_param
+         * @return self
+         */
+        public static function setTemplateParam (array $template_param):self
+        {
+        }
+
+        /**
+         * @param array $extra
+         */
+        public static function setExtra (array $extra): self
+        {
+        }
+        /**
+         * 验证手机号验证码
+         * @param string $phone
+         * @param string $code
+         *
+         * @return bool
+         */
+        public static function verify(string $phone,string $code):bool
+        {
+            return true;
+        }
     }
 }
 namespace think{

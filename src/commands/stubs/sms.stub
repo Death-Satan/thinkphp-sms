@@ -1,0 +1,47 @@
+<?php
+declare (strict_types = 1);
+
+namespace {%namespace%};
+
+use SaTan\Think\Sms\SmsAction;
+
+class {%className%} extends SmsAction
+{
+        /**
+         * 驱动
+         * @var string
+         */
+        protected string $disk = '';
+
+        /**
+         * 签名名称
+         * @var string
+         */
+        protected string $sign_name = '';
+        /**
+         * 模板id
+         * @var string
+         */
+        protected string $template_code = '';
+        /**
+         * 模板变量
+         * @var array
+         */
+        protected array $template_param = [];
+        /**
+         * 额外参数
+         * @var array
+         */
+        protected array $extra = [];
+        /**
+         * 验证手机号验证码
+         * @param string $phone
+         * @param string $code
+         *
+         * @return bool
+         */
+        public function verify(string $phone,string $code):bool
+        {
+            return true;
+        }
+}
