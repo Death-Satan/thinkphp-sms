@@ -40,7 +40,7 @@ class {%className%} extends SmsAction
          *
          * @return bool
          */
-        public function verify(string $phone,string $code):bool
+        public function verify(string $phone,array $extra=[]):bool
         {
             return true;
         }

@@ -12,6 +12,8 @@ namespace SaTan\Think\Sms;
 
 
 use think\App;
+use think\db\BaseQuery;
+use think\Model;
 
 class ThinkService extends \think\Service
 {

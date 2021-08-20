@@ -84,14 +84,15 @@ abstract class SmsAction
         $this->extra = $extra;
         return $this;
     }
+
     /**
      * 验证手机号验证码
+     *
      * @param string $phone
-     * @param string $code
      *
      * @return bool
      */
-    public function verify(string $phone,string $code):bool
+    public function verify(string $phone):bool
     {
         return true;
     }
